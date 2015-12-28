@@ -1,0 +1,31 @@
+
+EventManager
+	fire(Event)
+	listener_id listen(function)
+	listen(function_event_only, String... tags)
+	unlisten(listener_id)
+
+	list : CallbackWrapper
+
+	//static_assert
+	//is_base_of
+CallbackWrapper
+	tag
+	id
+	
+	CallbackWrapper(tag)
+
+	virtual invoke() = 0
+	operator() {
+		invoke()
+	}
+	getTag()
+
+CallbackKeyBoardEvent
+	callbackkeyboard
+
+	CallbackKeyboardEvent() : CallbackWrapper(keyboardevent)
+	
+	invoke() {
+		callbackkeyboard()
+	}
