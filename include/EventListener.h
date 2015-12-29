@@ -16,7 +16,7 @@ class EventListener {
 public:
 	using EventReceiverFn = std::function<void(E&)>;
 private:
-	static_assert(std::is_base_of<E, Event>::value, TEMPLATE_PARAM_ERROR);
+	static_assert(std::is_base_of<Event, E>::value, TEMPLATE_PARAM_ERROR);
 
 	int m_type;
 
