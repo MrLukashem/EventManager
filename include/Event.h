@@ -5,9 +5,11 @@
 namespace eternity {
 
 class Event {
-
+	friend class EventManager;
 public:
-	static int getType() {
+	static int m_type;
+
+	virtual int getType() const final {
 		return 0;
 	}
 };
